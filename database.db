@@ -1,0 +1,22 @@
+import sqlite3
+
+conn = sqlite3.connect("database.db")
+
+conn.execute("""
+CREATE TABLE alumni(
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+name TEXT,
+email TEXT,
+batch TEXT
+)
+""")
+
+conn.execute("""
+CREATE TABLE posts(
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+content TEXT
+)
+""")
+
+conn.commit()
+conn.close()
